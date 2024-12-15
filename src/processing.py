@@ -1,10 +1,10 @@
-from typing import List, Dict, Optional
-from typing import List, Dict
 from datetime import datetime
+from typing import Dict
+from typing import List
+from typing import Optional
 
 
-def filter_by_state(operations: List[Dict[str, str]],
-                    state: Optional[str] = 'EXECUTED') -> List[Dict[str, str]]:
+def filter_by_state(operations: List[Dict[str, str]], state: Optional[str] = "EXECUTED") -> List[Dict[str, str]]:
     """
     Фильтрует список словарей по значению ключа 'state'.
 
@@ -13,11 +13,10 @@ def filter_by_state(operations: List[Dict[str, str]],
     :return: Новый список словарей, содержащий только те словари,
      у которых ключ 'state' соответствует указанному значению.
     """
-    return [operation for operation in operations if operation.get('state') == state]
+    return [operation for operation in operations if operation.get("state") == state]
 
 
-def sort_by_date(operations: List[Dict[str, str]],
-                 reverse: bool = True) -> List[Dict[str, str]]:
+def sort_by_date(operations: List[Dict[str, str]], reverse: bool = True) -> List[Dict[str, str]]:
     """
     Сортирует список словарей по дате.
 
@@ -25,4 +24,4 @@ def sort_by_date(operations: List[Dict[str, str]],
     :param reverse: Порядок сортировки (по умолчанию — убывание).
     :return: Новый список, отсортированный по дате.
     """
-    return sorted(operations, key=lambda x: datetime.fromisoformat(x['date']), reverse=reverse)
+    return sorted(operations, key=lambda x: datetime.fromisoformat(x["date"]), reverse=reverse)
