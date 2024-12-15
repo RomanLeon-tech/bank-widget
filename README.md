@@ -8,4 +8,4 @@
 
 1. Клонируйте репозиторий:
    ```sh
-   git clone https://github.com/ваш_пользователь/bank-widget.git
+   git clone https://github.com/RomanLeon-tech/bank-widget.git
