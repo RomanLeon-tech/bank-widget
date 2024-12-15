@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from src.widget.masks import get_mask_account
-from src.widget.masks import get_mask_card_number
+from src.masks import get_mask_account
+from src.masks import get_mask_card_number
 
 
 def mask_account_card(input_string: str) -> str:
@@ -22,7 +22,8 @@ def get_date(date_string: str) -> str:
     Преобразует строку с датой в формате "2024-03-11T02:26:18.671407"
     в формат "ДД.ММ.ГГГГ".
 
-    :param date_string: Строка с датой в формате "2024-03-11T02:26:18.671407".
+    :param date_string: Строка с датой
+    в формате "2024-03-11T02:26:18.671407".
     :return: Строка с датой в формате "ДД.ММ.ГГГГ".
     """
     date_object = datetime.strptime(date_string, "%Y-%m-%dT%H:%M:%S.%f")
