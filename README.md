@@ -19,16 +19,15 @@
 
 ### Инструкции по установке
 
-1. Установите зависимости:
+1. Клонируйте репозиторий:
+   ```sh
+   git clone https://github.com/RomanLeon-tech/bank-widget.git
+2. Установите зависимости:
 Для работы проекта необходимы следующие зависимости:
 -Python 3.9 или выше
 -Poetry (менеджер зависимостей для Python)
    ```sh
    poetry install
-   
-2. Клонируйте репозиторий:
-   ```sh
-   git clone https://github.com/RomanLeon-tech/bank-widget.git
 
 ### Использование:
 
