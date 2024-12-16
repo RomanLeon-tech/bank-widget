@@ -4,7 +4,8 @@ from typing import List
 from typing import Optional
 
 
-def filter_by_state(operations: List[Dict[str, str]], state: Optional[str] = "EXECUTED") -> List[Dict[str, str]]:
+def filter_by_state(operations: List[Dict[str, str]],
+                    state: Optional[str] = "EXECUTED") -> List[Dict[str, str]]:
     """
     Фильтрует список словарей по значению ключа 'state'.
 
@@ -13,10 +14,12 @@ def filter_by_state(operations: List[Dict[str, str]], state: Optional[str] = "EX
     :return: Новый список словарей, содержащий только те словари,
      у которых ключ 'state' соответствует указанному значению.
     """
-    return [operation for operation in operations if operation.get("state") == state]
+    return [operation for operation in operations
+            if operation.get("state") == state]
 
 
-def sort_by_date(operations: List[Dict[str, str]], reverse: bool = True) -> List[Dict[str, str]]:
+def sort_by_date(operations: List[Dict[str, str]],
+                 reverse: bool = True) -> List[Dict[str, str]]:
     """
     Сортирует список словарей по дате.
 
