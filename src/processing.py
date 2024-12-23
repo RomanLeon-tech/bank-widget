@@ -1,7 +1,5 @@
+from typing import List, Dict, Optional
 from datetime import datetime
-from typing import Dict
-from typing import List
-from typing import Optional
 
 
 def filter_by_state(operations: List[Dict[str, str]],
