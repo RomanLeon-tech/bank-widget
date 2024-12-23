@@ -1,5 +1,7 @@
-from typing import List, Dict, Optional
 from datetime import datetime
+from typing import Dict
+from typing import List
+from typing import Optional
 
 
 def filter_by_state(operations: List[Dict[str, str]],
@@ -25,4 +27,5 @@ def sort_by_date(operations: List[Dict[str, str]],
     :param reverse: Порядок сортировки (по умолчанию — убывание).
     :return: Новый список, отсортированный по дате.
     """
-    return sorted(operations, key=lambda x: datetime.fromisoformat(x["date"]), reverse=reverse)
+    return sorted(operations, key=lambda x: datetime.fromisoformat(x["date"]),
+                  reverse=reverse)
