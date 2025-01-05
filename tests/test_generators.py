@@ -1,5 +1,6 @@
 import pytest
-from src.generators.transactions import filter_by_currency, transaction_descriptions
+from src.generators.transactions import (filter_by_currency,
+                                         transaction_descriptions)
 from src.generators.cards import card_number_generator
 
 
@@ -52,6 +53,7 @@ def sample_transactions():
             "to": "Счет 11776614605963066702"
         }
     ]
+
 
 def test_filter_by_currency():
     transactions = [
@@ -107,6 +109,7 @@ def test_filter_by_currency():
     with pytest.raises(StopIteration):
         next(usd_transactions)
 
+
 def test_transaction_descriptions():
     transactions = [
         {
@@ -161,6 +164,7 @@ def test_transaction_descriptions():
     assert next(descriptions) == "Открытие вклада"
     with pytest.raises(StopIteration):
         next(descriptions)
+
 
 def test_card_number_generator():
     card_numbers = card_number_generator(1, 5)

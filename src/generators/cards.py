@@ -1,5 +1,6 @@
 from typing import Generator
 
+
 def card_number_generator(start: int, end: int) -> Generator[str, None, None]:
     """
     Генерирует номера банковских карт в заданном диапазоне.

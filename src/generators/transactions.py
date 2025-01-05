@@ -14,7 +14,9 @@ def filter_by_currency(transactions: List[Dict],
         if transaction['operationAmount']['currency']['name'] == currency:
             yield transaction
 
-def transaction_descriptions(transactions: List[Dict]) -> Generator[str, None, None]:
+
+def transaction_descriptions(transactions: List[Dict]) \
+        -> Generator[str, None, None]:
     """
     Возвращает описание каждой транзакции по очереди.
 
