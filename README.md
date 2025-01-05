@@ -112,5 +112,101 @@ state
 
 ### Запуск тестов
 Для запуска тестов используйте команду:
-```sh
-poetry run pytest
+   ```sh```
+   poetry run pytest
+
+# Модуль generators:
+
+Модуль `generators` содержит функции для работы с массивами транзакций, 
+используя генераторы для эффективной обработки данных.
+
+Функции:
+1.filter_by_currency - Фильтрует транзакции по заданной валюте.
+```python
+from src.generators.transactions import filter_by_currency
+
+transactions = [
+    {
+        "id": 939719570,
+        "state": "EXECUTED",
+        "date": "2018-06-30T02:08:58.425572",
+        "operationAmount": {
+            "amount": "9824.07",
+            "currency": {
+                "name": "USD",
+                "code": "USD"
+            }
+        },
+        "description": "Перевод организации",
+        "from": "Счет 75106830613657916952",
+        "to": "Счет 11776614605963066702"
+    },
+    {
+        "id": 142264268,
+        "state": "EXECUTED",
+        "date": "2019-04-04T23:20:05.206878",
+        "operationAmount": {
+            "amount": "79114.93",
+            "currency": {
+                "name": "USD",
+                "code": "USD"
+            }
+        },
+        "description": "Перевод со счета на счет",
+        "from": "Счет 19708645243227258542",
+        "to": "Счет 75651667383060284188"
+    }
+]
+
+usd_transactions = filter_by_currency(transactions, "USD")
+for _ in range(2):
+    print(next(usd_transactions))
+```
+2.transaction_descriptions - Возвращает описание каждой транзакции по очереди.
+```python
+from src.generators.transactions import transaction_descriptions
+
+transactions = [
+    {
+        "id": 939719570,
+        "state": "EXECUTED",
+        "date": "2018-06-30T02:08:58.425572",
+        "operationAmount": {
+            "amount": "9824.07",
+            "currency": {
+                "name": "USD",
+                "code": "USD"
+            }
+        },
+        "description": "Перевод организации",
+        "from": "Счет 75106830613657916952",
+        "to": "Счет 11776614605963066702"
+    },
+    {
+        "id": 142264268,
+        "state": "EXECUTED",
+        "date": "2019-04-04T23:20:05.206878",
+        "operationAmount": {
+            "amount": "79114.93",
+            "currency": {
+                "name": "USD",
+                "code": "USD"
+            }
+        },
+        "description": "Перевод со счета на счет",
+        "from": "Счет 19708645243227258542",
+        "to": "Счет 75651667383060284188"
+    }
+]
+
+descriptions = transaction_descriptions(transactions)
+for _ in range(2):
+    print(next(descriptions))
+```
+3.card_number_generator - Генерирует номера банковских карт в заданном диапазоне.
+```python
+from src.generators.cards import card_number_generator
+
+for card_number in card_number_generator(1, 5):
+    print(card_number)
+```
