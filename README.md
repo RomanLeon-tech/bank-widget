@@ -210,3 +210,20 @@ from src.generators.cards import card_number_generator
 for card_number in card_number_generator(1, 5):
     print(card_number)
 ```
+
+## Модуль decorators
+Модуль `decorators` содержит декораторы для логирования выполнения функций.
+Декоратор log - Декоратор `log` автоматически логирует начало и конец выполнения функции, 
+а также ее результаты или возникшие ошибки.
+```python
+from src.decorators.log import log
+
+@log(filename="mylog.txt")
+def my_function(x, y):
+    return x + y
+
+my_function(1, 2)
+```
+Ожидаемый вывод в лог-файл mylog.txt при успешном выполнении: my_function ok
+Ожидаемый вывод при ошибке: my_function error: тип ошибки. Inputs: (1, 2), {}
+Где тип ошибки заменяется на текст ошибки.
