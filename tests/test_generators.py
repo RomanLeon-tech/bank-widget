@@ -168,10 +168,10 @@ def test_transaction_descriptions():
 
 def test_card_number_generator():
     card_numbers = card_number_generator(1, 5)
-    assert next(card_numbers) == "0000 0000 0000 0001"
-    assert next(card_numbers) == "0000 0000 0000 0002"
-    assert next(card_numbers) == "0000 0000 0000 0003"
-    assert next(card_numbers) == "0000 0000 0000 0004"
-    assert next(card_numbers) == "0000 0000 0000 0005"
+    assert next(card_numbers) == "0000000000000001"
+    assert next(card_numbers) == "0000000000000002"
+    assert next(card_numbers) == "0000000000000003"
+    assert next(card_numbers) == "0000000000000004"
+    assert next(card_numbers) == "0000000000000005"
     with pytest.raises(StopIteration):
         next(card_numbers)
