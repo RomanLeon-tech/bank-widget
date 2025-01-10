@@ -2,17 +2,18 @@ import logging
 from functools import wraps
 from typing import Callable, Any, Optional
 
-
 def log(filename: Optional[str] = None) -> Callable:
     """
     Декоратор для логирования выполнения функции.
 
-    :param filename: Имя файла для записи логов. Если не указано, логи выводятся в консоль.
+    :param filename: Имя файла для записи логов.
+    Если не указано, логи выводятся в консоль.
     :return: Декоратор.
     """
     def decorator(func: Callable) -> Callable:
         @wraps(func)
         def wrapper(*args: Any, **kwargs: Any) -> Any:
+            global file_handler
             logger = logging.getLogger(func.__name__)
             logger.setLevel(logging.INFO)
 
