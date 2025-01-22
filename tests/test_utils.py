@@ -30,7 +30,7 @@ def test_convert_currency(mock_get):
     mock_response = MagicMock()
     mock_response.status_code = 200
     mock_response.json.return_value = {
-        "rates": {
+        "conversion_rates": {
             "EUR": 0.85,
             "RUB": 75.0
         }
