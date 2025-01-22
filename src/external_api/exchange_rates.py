@@ -2,6 +2,7 @@ import os
 import requests
 from typing import Union
 
+
 def convert_currency(amount: float, from_currency: str, to_currency: str) -> Union[float, None]:
     """
     Конвертирует сумму из одной валюты в другую с использованием внешнего API.
@@ -12,10 +13,10 @@ def convert_currency(amount: float, from_currency: str, to_currency: str) -> Uni
     :return: Конвертированная сумма или None в случае ошибки.
     """
     api_key = os.getenv("EXCHANGE_RATES_API_KEY")
-    api_url = f"https://api.exchangeratesapi.io/latest?base={from_currency}&apikey={api_key}"
+    api_url = f"https://v6.exchangerate-api.com/v6/{api_key}/latest/{from_currency}"
     response = requests.get(api_url)
     if response.status_code == 200:
-        rates = response.json().get("rates", {})
+        rates = response.json().get("conversion_rates", {})
         if to_currency in rates:
             return amount * rates[to_currency]
     return None
