@@ -5,3 +5,4 @@ echo "*.pyo" >> .gitignore
 echo "*.pyd" >> .gitignore
 echo ".env" >> .gitignore
 echo ".venv" >> .gitignore
+.env

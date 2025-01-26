@@ -1,0 +1,63 @@
+2025-01-23 00:21:00,408 - mask_operations - ERROR - Error masking card number: object of type 'int' has no len()
+2025-01-23 00:21:00,424 - mask_operations - ERROR - Error masking card number: object of type 'int' has no len()
+2025-01-23 00:21:00,424 - mask_operations - ERROR - Error masking account number: 'int' object has no attribute 'startswith'
+2025-01-23 00:21:00,424 - mask_operations - ERROR - Error masking account number: 'int' object has no attribute 'startswith'
+2025-01-23 00:21:00,439 - mask_operations - ERROR - Error masking card number: object of type 'int' has no len()
+2025-01-23 00:21:00,439 - mask_operations - ERROR - Error masking account number: 'int' object has no attribute 'startswith'
+2025-01-23 00:21:00,470 - mask_operations - ERROR - Error masking card number: object of type 'int' has no len()
+2025-01-23 00:21:00,470 - mask_operations - ERROR - Error masking card number: object of type 'int' has no len()
+2025-01-23 00:21:00,486 - mask_operations - ERROR - Error masking account number: 'int' object has no attribute 'startswith'
+2025-01-23 00:29:52,123 - mask_operations - INFO - Successfully masked card number: 123456******3456
+2025-01-23 00:29:52,123 - mask_operations - WARNING - Invalid card number length: 10
+2025-01-23 00:29:52,123 - mask_operations - WARNING - Invalid card number length: 0
+2025-01-23 00:29:52,123 - mask_operations - INFO - Successfully masked account number: —чет ****************7890
+2025-01-23 00:29:52,139 - mask_operations - INFO - Successfully masked account number: —чет ******7890
+2025-01-23 00:29:52,139 - mask_operations - WARNING - Invalid account number format: 
+2025-01-23 00:29:52,155 - mask_operations - ERROR - Error masking card number: object of type 'int' has no len()
+2025-01-23 00:29:52,170 - mask_operations - ERROR - Error masking card number: object of type 'int' has no len()
+2025-01-23 00:42:46,112 - mask_operations - INFO - Successfully masked card number: 123456******3456
+2025-01-23 00:42:46,112 - mask_operations - WARNING - Invalid card number length: 10
+2025-01-23 00:42:46,127 - mask_operations - WARNING - Invalid card number length: 0
+2025-01-23 00:42:46,127 - mask_operations - INFO - Successfully masked account number: —чет ****************7890
+2025-01-23 00:42:46,127 - mask_operations - INFO - Successfully masked account number: —чет ******7890
+2025-01-23 00:42:46,127 - mask_operations - WARNING - Invalid account number format: 
+2025-01-23 00:50:29,022 - mask_operations - INFO - Successfully masked card number: 123456******3456
+2025-01-23 00:50:29,024 - mask_operations - WARNING - Invalid card number length: 10
+2025-01-23 00:50:29,026 - mask_operations - WARNING - Invalid card number length: 0
+2025-01-23 00:50:29,027 - mask_operations - INFO - Successfully masked account number: —чет ****************7890
+2025-01-23 00:50:29,034 - mask_operations - INFO - Successfully masked account number: —чет ******7890
+2025-01-23 00:50:29,040 - mask_operations - WARNING - Invalid account number format: 
+2025-01-23 00:50:29,048 - mask_operations - ERROR - Error masking card number: object of type 'int' has no len()
+2025-01-23 00:50:29,064 - mask_operations - ERROR - Error masking card number: object of type 'int' has no len()
+2025-01-23 01:09:50,756 - mask_operations - INFO - Successfully masked card number: 123456******3456
+2025-01-23 01:09:50,756 - mask_operations - WARNING - Invalid card number length: 10
+2025-01-23 01:09:50,772 - mask_operations - WARNING - Invalid card number length: 0
+2025-01-23 01:09:50,772 - mask_operations - INFO - Successfully masked account number: —чет ****************7890
+2025-01-23 01:09:50,772 - mask_operations - INFO - Successfully masked account number: —чет ******7890
+2025-01-23 01:09:50,772 - mask_operations - WARNING - Invalid account number format: 
+2025-01-23 01:09:50,803 - mask_operations - ERROR - Error masking card number: object of type 'int' has no len()
+2025-01-23 01:09:50,819 - mask_operations - ERROR - Error masking card number: object of type 'int' has no len()
+2025-01-23 01:12:17,408 - mask_operations - INFO - Successfully masked card number: 123456******3456
+2025-01-23 01:12:17,408 - mask_operations - WARNING - Invalid card number length: 10
+2025-01-23 01:12:17,408 - mask_operations - WARNING - Invalid card number length: 0
+2025-01-23 01:12:17,408 - mask_operations - INFO - Successfully masked account number: —чет ****************7890
+2025-01-23 01:12:17,408 - mask_operations - INFO - Successfully masked account number: —чет ******7890
+2025-01-23 01:12:17,423 - mask_operations - WARNING - Invalid account number format: 
+2025-01-23 01:12:17,439 - mask_operations - ERROR - Error masking card number: object of type 'int' has no len()
+2025-01-23 01:12:17,455 - mask_operations - ERROR - Error masking card number: object of type 'int' has no len()
+2025-01-26 22:31:55,857 - mask_operations - INFO - Successfully masked card number: 123456******3456
+2025-01-26 22:31:55,872 - mask_operations - WARNING - Invalid card number length: 10
+2025-01-26 22:31:55,872 - mask_operations - WARNING - Invalid card number length: 0
+2025-01-26 22:31:55,872 - mask_operations - INFO - Successfully masked account number: —чет ****************7890
+2025-01-26 22:31:55,872 - mask_operations - INFO - Successfully masked account number: —чет ******7890
+2025-01-26 22:31:55,888 - mask_operations - WARNING - Invalid account number format: 
+2025-01-26 22:31:55,904 - mask_operations - ERROR - Error masking card number: object of type 'int' has no len()
+2025-01-26 22:31:55,919 - mask_operations - ERROR - Error masking card number: object of type 'int' has no len()
+2025-01-26 22:34:39,880 - mask_operations - INFO - Successfully masked card number: 123456******3456
+2025-01-26 22:34:39,882 - mask_operations - WARNING - Invalid card number length: 10
+2025-01-26 22:34:39,883 - mask_operations - WARNING - Invalid card number length: 0
+2025-01-26 22:34:39,885 - mask_operations - INFO - Successfully masked account number: —чет ****************7890
+2025-01-26 22:34:39,891 - mask_operations - INFO - Successfully masked account number: —чет ******7890
+2025-01-26 22:34:39,896 - mask_operations - WARNING - Invalid account number format: 
+2025-01-26 22:34:39,920 - mask_operations - ERROR - Error masking card number: object of type 'int' has no len()
+2025-01-26 22:34:39,926 - mask_operations - ERROR - Error masking card number: object of type 'int' has no len()
