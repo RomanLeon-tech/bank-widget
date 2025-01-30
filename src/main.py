@@ -2,7 +2,6 @@ import json
 import csv
 import pandas as pd
 from typing import List, Dict
-
 from src.generators import transactions
 from src.utils.transaction_filter import filter_transactions_by_description
 
