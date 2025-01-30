@@ -2,6 +2,8 @@ import json
 import csv
 import pandas as pd
 from typing import List, Dict
+
+from src.generators import transactions
 from src.utils.transaction_filter import filter_transactions_by_description
 
 
@@ -46,23 +48,36 @@ def main():
     status = input("Введите статус, по которому необходимо выполнить "
                    "фильтрацию. Доступные для фильтровки "
                    "статусы: EXECUTED, CANCELED, PENDING: ").upper()
+                   "фильтрацию. Доступные для фильтровки статусы: "
+                   "EXECUTED, CANCELED, PENDING: ").upper()
     while status not in ["EXECUTED", "CANCELED", "PENDING"]:
         print(f"Статус операции \"{status}\" недоступен.")
         status = input("Введите статус, по которому необходимо выполнить "
                        "фильтрацию. Доступные для фильтровки "
                        "статусы: EXECUTED, CANCELED, PENDING: ").upper()
+        status = input("Введите статус, по которому необходимо выполнить"
+                       " фильтрацию. Доступные для фильтровки статусы: "
+                       "EXECUTED, CANCELED, PENDING: ").upper()
 
+    filtered_transactions = [t for t in transactions if
+                             t.get('state', '').upper() == status]
     filtered_transactions = [t for t in transactions
                              if t.get('state', '').upper() == status]
     print(f"Операции отфильтрованы по статусу \"{status}\"")
 
     sort_choice = input("Отсортировать операции по дате? Да/Нет: ").lower()
     if sort_choice == 'да':
+        sort_order = input("Отсортировать по возрастанию "
+                           "или по убыванию? ").lower()
+        filtered_transactions.sort(key=lambda x: x.get('date', ''),
+                                   reverse=(sort_order == 'по убыванию'))
         sort_order = input("Отсортировать по "
                            "возрастанию или по убыванию? ").lower()
         filtered_transactions.sort(key=lambda x:
         x.get('date', ''), reverse=(sort_order == 'по убыванию'))
 
+    currency_choice = input("Выводить только рублевые "
+                            "транзакции? Да/Нет: ").lower()
     currency_choice = input("Выводить только "
                             "рублевые транзакции? Да/Нет: ").lower()
     if currency_choice == 'да':
@@ -70,6 +85,8 @@ def main():
                                  if t.get('operationAmount', {}).get
                                  ('currency', {}).get('code', '') == 'RUB']
 
+    search_choice = input("Отфильтровать список транзакций по "
+                          "определенному слову в описании? Да/Нет: ").lower()
     search_choice = input("Отфильтровать список транзакций "
                           "по определенному "
                           "слову в описании? Да/Нет: ").lower()
@@ -79,16 +96,19 @@ def main():
                                  (filtered_transactions, search_string))
 
     print("Распечатываю итоговый список транзакций...")
+    print(f"Всего банковских операций в выборке: "
+          f"{len(filtered_transactions)}")
     print(f"Всего банковских операций в выборке: {len(filtered_transactions)}")
     for transaction in filtered_transactions:
         print(f"{transaction.get('date', '')} "
               f"{transaction.get('description', '')}")
+        print(f"Счет {transaction.get('from', '')} -> Счет"
+              f" {transaction.get('to', '')}")
+        print(f"Сумма: {transaction.get('operationAmount',
         print(f"Счет {transaction.get('from', '')} "
-              f"-> Счет {transaction.get('to', '')}")
-        print(f"Сумма: {transaction.get('operationAmount', 
-                                        {}).get('amount', '')} "
-              f"{transaction.get('operationAmount',
-                                 {}).get('currency', {}).get('code', '')}")
+              f"-> Счет {transaction.get('to', '')}")print(f"Сумма: {transaction.get('operationAmount',{}).get('amount', '')} "
+              f"{transaction.get('operationAmount', {}).
+              get('currency', {}).get('code', '')}"){transaction.get('operationAmount',{}).get('currency', {}).get('code', '')}")
         print()
 
     if not filtered_transactions:

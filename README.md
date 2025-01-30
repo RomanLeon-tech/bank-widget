@@ -245,3 +245,12 @@ from src.utils.file_reader import read_excel_file
 
 transactions = read_excel_file('path/to/transactions.xlsx')
 
+# Фильтрация транзакций по строке поиска:
+from src.utils.transaction_filter import filter_transactions_by_description
+
+filtered_transactions = filter_transactions_by_description(transactions, 'search_string')
+
+# Подсчет количества операций по категориям:
+from src.utils.transaction_categorizer import categorize_transactions
+
+category_count = categorize_transactions(transactions, ['category1', 'category2'])

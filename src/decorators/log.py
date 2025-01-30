@@ -20,6 +20,7 @@ def log(filename: Optional[str] = None) -> Callable:
 
             if filename:
                 file_handler = logging.FileHandler(filename)
+<<<<<<< HEAD
                 file_handler.setFormatter(logging.Formatter
                                           ('%(name)s %(message)s'))
                 logger.addHandler(file_handler)
@@ -27,6 +28,15 @@ def log(filename: Optional[str] = None) -> Callable:
             console_handler = logging.StreamHandler()
             console_handler.setFormatter(logging.Formatter
                                          ('%(name)s %(message)s'))
+=======
+                file_handler.setFormatter(logging.
+                                          Formatter('%(name)s %(message)s'))
+                logger.addHandler(file_handler)
+
+            console_handler = logging.StreamHandler()
+            console_handler.setFormatter(logging.
+                                         Formatter('%(name)s %(message)s'))
+>>>>>>> feature/add-decorators
             logger.addHandler(console_handler)
 
             try:

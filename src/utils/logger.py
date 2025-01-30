@@ -22,6 +22,10 @@ def setup_logger(name: str, log_file: str,
                                                 ' - %(name)s - %(levelname)s'
                                                 ' - %(message)s'))
 
+    (file_handler.setFormatter
+     (logging.Formatter('%(asctime)s '
+                        '- %(name)s - %(levelname)s '
+                        '- %(message)s')))
     # Добавляем обработчик к логгеру
     logger.addHandler(file_handler)
 

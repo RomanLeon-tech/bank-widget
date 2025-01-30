@@ -9,6 +9,8 @@ def read_json_file(file_path: str) -> List[Dict[str, Any]]:
     """
     Читает JSON-файл и возвращает список словарей с
     данными о финансовых транзакциях.
+    Читает JSON-файл и возвращает список словарей
+    с данными о финансовых транзакциях.
 
     :param file_path: Путь к JSON-файлу.
     :return: Список словарей с данными о финансовых транзакциях.
@@ -22,6 +24,8 @@ def read_json_file(file_path: str) -> List[Dict[str, Any]]:
             else:
                 logger.warning(f"JSON file does not contain a list:"
                                f" {file_path}")
+                logger.warning(f"JSON file does not "
+                               f"contain a list: {file_path}")
                 return []
     except (FileNotFoundError, json.JSONDecodeError) as e:
         logger.error(f"Error reading JSON file: {file_path}. {e}")

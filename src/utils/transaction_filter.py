@@ -6,6 +6,7 @@ def filter_transactions_by_description(transactions: List[Dict[str, str]],
                                        search_string: str) -> \
         (List)[Dict[str, str]]:
 
+                                       search_string: str) -> (List)[Dict[str, str]]:
     """
     Фильтрует транзакции по строке поиска в описании.
 
@@ -17,3 +18,5 @@ def filter_transactions_by_description(transactions: List[Dict[str, str]],
     return [transaction for transaction in
             transactions if pattern.search
             (transaction.get('description', ''))]
+    return [transaction for transaction in transactions
+            if pattern.search(transaction.get('description', ''))]
