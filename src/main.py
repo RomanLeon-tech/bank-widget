@@ -2,7 +2,6 @@ import json
 import csv
 import pandas as pd
 from typing import List, Dict
-
 from src.generators import transactions
 from src.utils.transaction_filter import filter_transactions_by_description
 
@@ -48,8 +47,7 @@ def main():
     status = input("Введите статус, по которому необходимо выполнить "
                    "фильтрацию. Доступные для фильтровки "
                    "статусы: EXECUTED, CANCELED, PENDING: ").upper()
-                   "фильтрацию. Доступные для фильтровки статусы: "
-                   "EXECUTED, CANCELED, PENDING: ").upper()
+
     while status not in ["EXECUTED", "CANCELED", "PENDING"]:
         print(f"Статус операции \"{status}\" недоступен.")
         status = input("Введите статус, по которому необходимо выполнить "
@@ -100,15 +98,10 @@ def main():
           f"{len(filtered_transactions)}")
     print(f"Всего банковских операций в выборке: {len(filtered_transactions)}")
     for transaction in filtered_transactions:
-        print(f"{transaction.get('date', '')} "
-              f"{transaction.get('description', '')}")
-        print(f"Счет {transaction.get('from', '')} -> Счет"
-              f" {transaction.get('to', '')}")
-        print(f"Сумма: {transaction.get('operationAmount',
-        print(f"Счет {transaction.get('from', '')} "
-              f"-> Счет {transaction.get('to', '')}")print(f"Сумма: {transaction.get('operationAmount',{}).get('amount', '')} "
-              f"{transaction.get('operationAmount', {}).
-              get('currency', {}).get('code', '')}"){transaction.get('operationAmount',{}).get('currency', {}).get('code', '')}")
+        print(f"{transaction.get('date', '')} {transaction.get('description', '')}")
+        print(f"Счет {transaction.get('from', '')} -> Счет {transaction.get('to', '')}")
+        print(
+            f"Сумма: {transaction.get('operationAmount', {}).get('amount', '')} {transaction.get('operationAmount', {}).get('currency', {}).get('code', '')}")
         print()
 
     if not filtered_transactions:
