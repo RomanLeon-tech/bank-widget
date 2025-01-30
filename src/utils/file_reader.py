@@ -4,6 +4,7 @@ from src.utils.logger import setup_logger
 
 logger = setup_logger('file_reader', 'logs/file_reader.log')
 
+
 def read_csv_file(file_path: str) -> List[Dict[str, Any]]:
     """
 
@@ -18,6 +19,7 @@ def read_csv_file(file_path: str) -> List[Dict[str, Any]]:
     except Exception as e:
         logger.error(f"Error reading CSV file: {file_path}. {e}")
         return []
+
 
 def read_excel_file(file_path: str) -> List[Dict[str, Any]]:
     """

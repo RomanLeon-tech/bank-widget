@@ -17,15 +17,13 @@ def setup_logger(name: str, log_file: str,
 
     # Создаем обработчик для записи логов в файл
     file_handler = RotatingFileHandler(log_file, maxBytes=10**6, backupCount=5)
-<<<<<<< HEAD
+
     (file_handler.setFormatter(logging.Formatter(
         '%(asctime)s ''- %(name)s - %(levelname)s - %(message)s')))
-=======
+
     (file_handler.setFormatter
      (logging.Formatter('%(asctime)s - %(name)s - '
                         '%(levelname)s - %(message)s')))
->>>>>>> develop
-
     # Добавляем обработчик к логгеру
     logger.addHandler(file_handler)
 
