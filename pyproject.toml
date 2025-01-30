@@ -8,6 +8,8 @@ packages = [{include = "widget", from = "src"}]
 [tool.poetry.dependencies]
 python = "^3.9"
 pytest = "^8.3.4"
+pandas = "^2.2.3"
+requests = "^2.32.3"
 
 [tool.poetry.group.lint.dependencies]
 flake8 = "^6.0.0"

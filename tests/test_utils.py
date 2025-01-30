@@ -12,7 +12,8 @@ def json_file_path(tmp_path):
 
 
 @pytest.mark.parametrize("json_data, expected", [
-    ([{"id": 1, "amount": 100, "currency": "USD"}], [{"id": 1, "amount": 100, "currency": "USD"}]),
+    ([{"id": 1, "amount": 100, "currency": "USD"}],
+     [{"id": 1, "amount": 100, "currency": "USD"}]),
     ([], []),
     (None, [])
 ])
