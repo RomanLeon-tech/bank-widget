@@ -1,5 +1,3 @@
-# src/generators/cards.py
-
 from typing import Generator
 
 

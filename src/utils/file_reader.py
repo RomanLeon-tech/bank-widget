@@ -6,7 +6,6 @@ logger = setup_logger('file_reader', 'logs/file_reader.log')
 
 def read_csv_file(file_path: str) -> List[Dict[str, Any]]:
     """
-    Читает CSV-файл и возвращает список словарей с данными о финансовых транзакциях.
 
     :param file_path: Путь к CSV-файлу.
     :return: Список словарей с данными о финансовых транзакциях.
@@ -22,7 +21,6 @@ def read_csv_file(file_path: str) -> List[Dict[str, Any]]:
 
 def read_excel_file(file_path: str) -> List[Dict[str, Any]]:
     """
-    Читает XLSX-файл и возвращает список словарей с данными о финансовых транзакциях.
 
     :param file_path: Путь к XLSX-файлу.
     :return: Список словарей с данными о финансовых транзакциях.

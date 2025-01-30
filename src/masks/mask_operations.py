@@ -5,8 +5,13 @@ logger = setup_logger('mask_operations', 'logs/mask_operations.log')
 
 def mask_card_number(card_number: str) -> str:
     """
+<<<<<<< HEAD
     Маскирует номер карты, оставляя видимыми только
     первые 6 и последние 4 цифры.
+=======
+    Маскирует номер карты, оставляя
+    видимыми только первые 6 и последние 4 цифры.
+>>>>>>> develop
 
     :param card_number: Номер карты.
     :return: Маскированный номер карты.
