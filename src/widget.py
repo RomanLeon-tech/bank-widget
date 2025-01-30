@@ -1,20 +1,17 @@
 from datetime import datetime
-
-from src.masks import get_mask_account
-from src.masks import get_mask_card_number
+from src.masks.mask_operations import mask_card_number
 
 
-def mask_account_card(input_string: str) -> str:
+def mask_account_number(input_string: str) -> str:
     """
     Маскирует номер карты или счета в зависимости от типа входной строки.
-
-    :param input_string: Строка, содержащая тип и номер карты или счета.
+ :param input_string: Строка, содержащая тип и номер карты или счета.
     :return: Строка с замаскированным номером.
     """
     if "Счет" in input_string:
-        return get_mask_account(int(input_string.split()[-1]))
+        return mask_account_number(int(input_string.split()[-1]))
     else:
-        return get_mask_card_number(int(input_string.split()[-1]))
+        return mask_card_number(int(input_string.split()[-1]))
 
 
 def get_date(date_string: str) -> str:

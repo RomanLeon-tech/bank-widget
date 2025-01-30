@@ -2,7 +2,6 @@ import logging
 from functools import wraps
 from typing import Callable, Any, Optional
 
-
 def log(filename: Optional[str] = None) -> Callable:
     """
     Декоратор для логирования выполнения функции.
@@ -20,13 +19,11 @@ def log(filename: Optional[str] = None) -> Callable:
 
             if filename:
                 file_handler = logging.FileHandler(filename)
-                file_handler.setFormatter(logging.Formatter
-                                          ('%(name)s %(message)s'))
+                file_handler.setFormatter(logging.Formatter('%(name)s %(message)s'))
                 logger.addHandler(file_handler)
 
             console_handler = logging.StreamHandler()
-            console_handler.setFormatter(logging.Formatter
-                                         ('%(name)s %(message)s'))
+            console_handler.setFormatter(logging.Formatter('%(name)s %(message)s'))
             logger.addHandler(console_handler)
 
             try:
@@ -34,8 +31,7 @@ def log(filename: Optional[str] = None) -> Callable:
                 logger.info("ok")
                 return result
             except Exception as e:
-                logger.error(f"error: {type(e).__name__}. "
-                             f"Inputs: {args}, {kwargs}")
+                logger.error(f"error: {type(e).__name__}. Inputs: {args}, {kwargs}")
                 raise
             finally:
                 if filename:

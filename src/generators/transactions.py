@@ -25,3 +25,7 @@ def transaction_descriptions(transactions: List[Dict]) \
     """
     for transaction in transactions:
         yield transaction['description']
+
+
+def card_number_generator():
+    return None
