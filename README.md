@@ -227,3 +227,21 @@ my_function(1, 2)
 Ожидаемый вывод в лог-файл mylog.txt при успешном выполнении: my_function ok
 Ожидаемый вывод при ошибке: my_function error: тип ошибки. Inputs: (1, 2), {}
 Где тип ошибки заменяется на текст ошибки.
+
+## Для работы с финансовыми транзакциями
+# Чтение данных из JSON, CSV и XLSX файлов
+Чтение данных из JSON, CSV и XLSX файлов:
+from src.utils.json_reader import read_json_file
+
+transactions = read_json_file('path/to/transactions.json')
+
+Чтение данных из CSV файла:
+from src.utils.file_reader import read_csv_file
+
+transactions = read_csv_file('path/to/transactions.csv')
+
+Чтение данных из XLSX файла:
+from src.utils.file_reader import read_excel_file
+
+transactions = read_excel_file('path/to/transactions.xlsx')
+
